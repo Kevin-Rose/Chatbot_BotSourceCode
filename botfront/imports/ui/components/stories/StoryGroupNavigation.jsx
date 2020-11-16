@@ -89,7 +89,7 @@ class StoryGroupNavigation extends React.Component {
                             content={<Icon name='add' />}
                             style={{ width: 0 }}
                         />,
-                        'New story group',
+                        '新建场景',
                     )}
                     {this.tooltipWrapper(
                         <Button
@@ -97,7 +97,7 @@ class StoryGroupNavigation extends React.Component {
                             onClick={() => modals.setSlotsModal(true)}
                             data-cy='slots-modal'
                         />,
-                        'Manage slots',
+                        '管理槽位',
                     )}
                     {this.tooltipWrapper(
                         <Button
@@ -105,7 +105,7 @@ class StoryGroupNavigation extends React.Component {
                             onClick={() => modals.setPoliciesModal(true)}
                             data-cy='policies-modal'
                         />,
-                        'Edit Policies',
+                        '编辑策略',
                     )}
                     {this.tooltipWrapper(
                         <Button

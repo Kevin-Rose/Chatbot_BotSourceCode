@@ -106,7 +106,7 @@ const ImportRasaFiles = (props) => {
                 )}
                 {filesWithErrors.length > 0 && (
                     <>
-                        <h4>The following files cannot be parsed and will be ignored:</h4>
+                        <h4>以下文件无法分析，将被忽略：</h4>
                         {filesWithErrors.map(f => (
                             <Message color='red' key={`errors-${f.name}`}>
                                 <Message.Header>{f.name}</Message.Header>
@@ -117,7 +117,7 @@ const ImportRasaFiles = (props) => {
                 )}
                 {filesWithWarnings.length > 0 && (
                     <>
-                        <h4>The following files have warnings associated with them:</h4>
+                        <h4>以下文件具有与之关联的警告：</h4>
                         {filesWithWarnings.map(f => (
                             <Message color='yellow' key={`warnings-${f.name}`}>
                                 <Message.Header>{f.name}</Message.Header>
@@ -205,7 +205,7 @@ const ImportRasaFiles = (props) => {
                                             onClick={() => fileField.current.click()}
                                         />
                                         <span className='small grey'>
-                                            or drop files to upload
+                                        或删除要上载的文件
                                         </span>
                                     </div>
                                 </>
@@ -269,8 +269,7 @@ const ImportRasaFiles = (props) => {
             icon: 'book',
             tooltip: (
                 <p>
-                    Import stories, one story group per file. The contents of existing
-                    story groups is never overwritten.
+                    导入场景，每个文件一个场景组。&apos;现有场景组的内容永远不会被覆盖。
                 </p>
             ),
         },
@@ -287,18 +286,14 @@ const ImportRasaFiles = (props) => {
             tooltip: (
                 <>
                     <p>
-                        Import slots and bot response responses. Existing slots and
-                        responses are completely overwritten. Slots in your current
-                        default domain are not imported.
+                    导入槽和机器人响应。现有的插槽和响应将被完全覆盖。&apos;不会导入当前默认域中的插槽。
                     </p>
 
                     <p>
-                        Actions and forms are not currently imported. If your actions and
-                        forms are mentioned in stories, they will automatically be infered
-                        on training.
+                    当前未导入表单和操作。如果你的行为和形式&apos;在故事中被提及，它们会在训练中自动推断出来。
                     </p>
 
-                    <p>For more information, read the docs.</p>
+                    <p>更多信息，请阅读文档。</p>
                 </>
             ),
         },
@@ -315,8 +310,7 @@ const ImportRasaFiles = (props) => {
             tooltip: (
                 <>
                     <p>
-                        Import NLU examples, synonyms and gazettes. Items are added to
-                        your current collection.
+                    输入NLU的例子，同义词和宪报，项目将添加到当前集合中。
                     </p>
                 </>
             ),
@@ -392,25 +386,21 @@ const ImportRasaFiles = (props) => {
                             content={(
                                 <>
                                     <p>
-                                        Bot responses found in domain files will use the
-                                        &apos;language&apos; attribute if it exists; if
-                                        not, the fallback import language will be used.
+                                        在域文件中找到的Bot响应将使用language属性（如果存在）；&apos;如果不存在，则将使用回退导入语言。
                                     </p>
 
                                     <p>
-                                        Likewise, the language of a NLU file can be
-                                        specified in its first line; if it isn&apos;t, the
-                                        fallback import language will be used.
+                                    同样，NLU文件的语言可以在其第一行中指定；如果不是，则将使用回写导入语言。
                                     </p>
 
-                                    <p>For more information, read the docs.</p>
+                                    <p>更多信息，请阅读文档。</p>
                                 </>
                             )}
                             inverted
                             trigger={(
                                 <div>
                                     <Icon name='question circle' />
-                                    <strong>Fallback import language: </strong>
+                                    <strong>回退导入语言： </strong>
                                 </div>
                             )}
                         />

@@ -89,8 +89,8 @@ class ProjectInfo extends React.Component {
             info
             content={(
                 <>
-                    To remove a language from the project, go to{' '}
-                    <strong> NLU &gt; Settings &gt; Delete </strong>.
+                    若要从项目中删除语言，请转到{' '}
+                    <strong> 语义理解 &gt; 设置 &gt; 删除 </strong>.
                 </>
             )}
         />
@@ -116,11 +116,11 @@ class ProjectInfo extends React.Component {
                         className='project-name'
                     />
                     <Form.Field>
-                        <label>Languages supported</label>
+                        <label>支持的语言</label>
                         <Dropdown
-                            label='Select Languages'
+                            label='选择语言'
                             name='lang'
-                            placeholder='Add languages'
+                            placeholder='添加语言'
                             multiple
                             search
                             value={value}
@@ -147,7 +147,7 @@ class ProjectInfo extends React.Component {
                     <ErrorsField />
                     <SubmitField
                         className='primary save-project-info-button'
-                        value='Save Changes'
+                        value='保存修改'
                         data-cy='save-changes'
                     />
                 </AutoForm>

@@ -51,12 +51,12 @@ const Statistics = (props) => {
 
     const renderCards = () => {
         const cards = [
-            { label: 'Examples', value: examples },
-            { label: 'Intents', value: intents.length },
-            { label: 'Entities', value: entities.length },
-            { label: 'Synonyms', value: synonyms },
-            { label: 'Gazettes', value: gazettes },
-            { label: 'Stories', value: storyCount },
+            { label: '例子', value: examples },
+            { label: '同义词', value: intents.length },
+            { label: '实体', value: entities.length },
+            { label: '正则表达式', value: synonyms },
+            { label: '特征', value: gazettes },
+            { label: '场景', value: storyCount },
         ];
 
         return cards.map(d => (

@@ -55,28 +55,22 @@ const BotResponsePopupContent = (props) => {
                     { !disableExisting
                         && (
                             <>
-                                <Dropdown.Header>Select from existing</Dropdown.Header>
+                                <Dropdown.Header>从现有中选择</Dropdown.Header>
                                 <Dropdown.Item onClick={() => setModalOpen(true)}>
                                     <Search fluid placeholder='Search responses...' />
                                 </Dropdown.Item>
                                 <Dropdown.Divider />
-                                <Dropdown.Header>Or use a template</Dropdown.Header>
+                                <Dropdown.Header>或者使用模板</Dropdown.Header>
                             </>
                         )
                     }
-                    <Dropdown.Item onClick={() => onCreate('TextPayload')} data-cy='from-text-template'>Text</Dropdown.Item>
-                    <Dropdown.Item disabled={noButtonResponse} onClick={() => onCreate('QuickRepliesPayload')} data-cy='from-qr-template'>Buttons and quick replies</Dropdown.Item>
-                    <Dropdown.Item disabled={noButtonResponse} onClick={() => onCreate('CarouselPayload')} data-cy='from-carousel-template'>Carousel</Dropdown.Item>
-                    <Dropdown.Item onClick={() => onCreate('ImagePayload')} data-cy='from-image-template'>Image</Dropdown.Item>
-                    <Dropdown.Item onClick={() => onCreate('CustomPayload')} data-cy='from-custom-template'>Custom</Dropdown.Item>
-                    {!limitedSelection
-                        && (
-                        <>
-                            <Dropdown.Item onClick={() => onCreate('VideoPayload')} data-cy='from-video-template'>Video</Dropdown.Item>
-                            <Dropdown.Item disabled={noButtonResponse} onClick={() => onCreate('ButtonPayload')} data-cy='from-button-template'>Button template</Dropdown.Item>
-                        </>
-                        )
-                    }
+                    <Dropdown.Item onClick={() => onCreate('TextPayload')} data-cy='from-text-template'>文本</Dropdown.Item>
+                    <Dropdown.Item disabled={noButtonResponse} onClick={() => onCreate('QuickRepliesPayload')} data-cy='from-qr-template'>按钮和快速回复</Dropdown.Item>
+                    <Dropdown.Item disabled={noButtonResponse} onClick={() => onCreate('CarouselPayload')} data-cy='from-carousel-template'>轮播</Dropdown.Item>
+                    <Dropdown.Item onClick={() => onCreate('ImagePayload')} data-cy='from-image-template'>图片</Dropdown.Item>
+                    <Dropdown.Item onClick={() => onCreate('CustomPayload')} data-cy='from-custom-template'>定制</Dropdown.Item>
+                    <Dropdown.Item onClick={() => onCreate('VideoPayload')} data-cy='from-video-template'>视频</Dropdown.Item>
+                    <Dropdown.Item disabled={noButtonResponse} onClick={() => onCreate('ButtonPayload')} data-cy='from-button-template'>按钮模板</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         </>

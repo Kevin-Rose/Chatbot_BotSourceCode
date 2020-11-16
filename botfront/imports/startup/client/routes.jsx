@@ -37,7 +37,7 @@ const authenticateProject = (nextState, replace, callback) => {
     Tracker.autorun(() => {
         if (areScopeReady()) {
             if (!Meteor.loggingIn() && !Meteor.userId()) {
-                browserHistory.push({
+                replace({
                     pathname: '/login',
                     state: { nextPathname: nextState.location.pathname },
                 });

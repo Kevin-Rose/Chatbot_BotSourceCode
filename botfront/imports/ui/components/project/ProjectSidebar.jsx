@@ -26,29 +26,29 @@ class ProjectSidebar extends React.Component {
                         <ProjectsDropdown currentProjectId={projectId} onProjectChange={handleChangeProject} />
                     </Menu.Item>
                     <Link to={`/project/${projectId}/dialogue`}>
-                        <Menu.Item name='Dialogue' icon='book' data-cy='dialogue-sidebar-link' />
+                        <Menu.Item name='对话' icon='book' data-cy='dialogue-sidebar-link' />
                     </Link>
                     <Link to={`/project/${projectId}/nlu/models`}>
-                        <Menu.Item name='NLU' icon='grid layout' data-cy='nlu-sidebar-link' />
+                        <Menu.Item name='语义理解' icon='grid layout' data-cy='nlu-sidebar-link' />
                     </Link>
                     <Link to={`/project/${projectId}/incoming`}>
-                        <Menu.Item name='Incoming' icon='inbox' data-cy='incoming-sidebar-link' />
+                        <Menu.Item name='意图识别' icon='inbox' data-cy='incoming-sidebar-link' />
                     </Link>
                     <Link to={`/project/${projectId}/responses`}>
-                        <Menu.Item name='Responses' icon='comment' />
+                        <Menu.Item name='对话响应' icon='comment' />
                     </Link>
                     <Link to={`/project/${projectId}/settings`}>
-                        <Menu.Item name='Settings' icon='setting' />
+                        <Menu.Item name='设置' icon='setting' />
                     </Link>
-                    <a href={settingsReady ? settings.settings.public.docUrl : ''} target='_blank' rel='noopener noreferrer'>
-                        <Menu.Item name='documentation' icon='question' />
+                    {/* <a href={settingsReady ? settings.settings.public.docUrl : ''} target='_blank' rel='noopener noreferrer'>
+                        <Menu.Item name='文档' icon='question' />
                     </a>
                     <a href={settingsReady ? 'https://spectrum.chat/botfront' : ''} target='_blank' rel='noopener noreferrer'>
-                        <Menu.Item name='help' icon='bell' content='Get help' />
-                    </a>
+                        <Menu.Item name='帮助' icon='bell' content='Get help' />
+                    </a> */}
                     <Divider inverted />
                     <Link to='/login'>
-                        <Menu.Item data-cy='signout' name='Sign out' icon='sign-out' />
+                        <Menu.Item data-cy='退出系统' name='Sign out' icon='sign-out' />
                     </Link>
                     <span className='force-bottom'>{packageJson.version}</span>
                 </Menu>

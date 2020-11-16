@@ -22,10 +22,10 @@ const MigrationControl = () => {
         <>
             {migration && can('global-admin') && (
             <>
-                <Header>Migrations Control</Header>
-                <p data-cy='migration-version'>Current version: {migration.version}</p>
-                <p data-cy='migration-latest-version'>Latest version: {migration.latest}</p>
-                <p data-cy='migration-status'>Status: {migration.locked ? 'Locked' : 'OK'}</p>
+                <Header>迁移控制</Header>
+                <p data-cy='migration-version'>当前版本： {migration.version}</p>
+                <p data-cy='migration-latest-version'>最新版本：{migration.latest}</p>
+                <p data-cy='migration-status'>状态： {migration.locked ? 'Locked' : 'OK'}</p>
                 {migration.locked && (
                     <>
                         <Button
@@ -35,12 +35,12 @@ const MigrationControl = () => {
                             }}
                             primary
                         >
-                        Unlock Migration
+                        解除迁移锁定
                         </Button>
                         <Confirm
                             open={confirmModalOpen}
                             header='Unlock migration control'
-                            content='Are you sure you want to proceed?'
+                            content='确定要继续吗？'
                             onConfirm={() => {
                                 unlockMigration();
                                 setLocalMigration({ ...migration, locked: !migration.locked });
@@ -52,8 +52,8 @@ const MigrationControl = () => {
                 )}
                 {!migration.locked && displayUnlockMessage && (
                     <Message positive>
-                        <Message.Header>Migration control unlocked</Message.Header>
-                        Restart Botfront to resume migration.
+                        <Message.Header>迁移控制已解锁</Message.Header>
+                        重新启动Botfront以恢复迁移。
                     </Message>
                 )}
             </>

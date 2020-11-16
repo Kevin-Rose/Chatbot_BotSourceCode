@@ -1,10 +1,9 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Segment, Message } from 'semantic-ui-react';
 
 import { safeLoad } from 'js-yaml';
-import { v4 as uuidv4 } from 'uuid';
 
 import BotResponsesContainer from '../../stories/common/BotResponsesContainer';
 import CustomResponseEditor from '../common/CustomResponseEditor';
@@ -17,8 +16,6 @@ const SequenceEditor = (props) => {
     const {
         name, sequence, onChange, onDeleteVariation, onChangePayloadType,
     } = props;
-
-    const [editorKey, setEditorKey] = useState(uuidv4());
 
     const getContent = (variation) => {
         const content = safeLoad((variation || {}).content);
@@ -48,7 +45,6 @@ const SequenceEditor = (props) => {
                     )}
                     {content.__typename === 'CustomPayload' && (
                         <CustomResponseEditor
-                            key={editorKey}
                             content={content}
                             onChange={value => onChange(value, index)}
                         />
@@ -70,7 +66,6 @@ const SequenceEditor = (props) => {
                             id={`delete-${name}-${index}`} // stop the response from saving if the input blur event is the delete button
                             onClick={() => {
                                 if (sequence.length === 1) {
-                                    setEditorKey(uuidv4());
                                     const blankTemplate = defaultTemplate(
                                         content.__typename,
                                     );
@@ -94,9 +89,10 @@ const SequenceEditor = (props) => {
                     style={{ margin: '10px' }}
                     content={(
                         <>
-                            The <b className='monospace'>custom</b> key must be an <b className='monospace'>object</b> and will be dispatched by rasa as is.
-                            Content under other top-level keys may be formatted according to rules
-                            specific to the output channel.
+                            By convention, everything under the{' '}
+                            <b className='monospace'>custom</b> key will be dispatched by Rasa{' '}
+                            <i>as is</i>, while content under other top-level keys may be
+                            formatted according to rules specific to the output channel.
                         </>
                     )}
                 />

@@ -36,39 +36,39 @@ class Settings extends React.Component {
         const panes = [
             {
                 name: 'info',
-                menuItem: <Menu.Item icon='info' content='Project Info' key='Project Info' />,
+                menuItem: <Menu.Item icon='info' content='项目信息' key='Project Info' />,
                 render: () => <Tab.Pane><ProjectInfo /></Tab.Pane>,
             },
             {
                 name: 'credentials',
-                menuItem: <Menu.Item icon='key' content='Credentials' key='Credentials' />,
+                menuItem: <Menu.Item icon='key' content='资格证书' key='Credentials' />,
                 render: () => <Tab.Pane><Credentials /></Tab.Pane>,
             },
             {
                 name: 'endpoints',
-                menuItem: <Menu.Item icon='code' content='Endpoints' key='Endpoints' />,
+                menuItem: <Menu.Item icon='code' content='接口' key='Endpoints' />,
                 render: () => <Tab.Pane><Endpoints /></Tab.Pane>,
             },
             {
                 name: 'instance',
-                menuItem: <Menu.Item icon='server' content='Instance' key='Instances' />,
+                menuItem: <Menu.Item icon='server' content='实例' key='Instances' />,
                 render: () => <Tab.Pane><Instances /></Tab.Pane>,
             },
             {
                 name: 'default-domain',
-                menuItem: <Menu.Item icon='globe' content='Default Domain' key='Default Domain' />,
+                menuItem: <Menu.Item icon='globe' content='默认域' key='Default Domain' />,
                 render: () => <Tab.Pane><DefaultDomain /></Tab.Pane>,
             },
             {
                 name: 'import-export',
-                menuItem: <Menu.Item icon='download' content='Import/Export' key='Import/Export' />,
+                menuItem: <Menu.Item icon='download' content='导入/导出' key='Import/Export' />,
                 render: () => <Tab.Pane><ImportExportProject /></Tab.Pane>,
             },
             {
                 menuItem: (
                     <Menu.Item
                         icon='ellipsis horizontal'
-                        content='More Settings'
+                        content='更多设置'
                         key='More Settings'
                         onClick={this.handleMoreSettings}
                     />

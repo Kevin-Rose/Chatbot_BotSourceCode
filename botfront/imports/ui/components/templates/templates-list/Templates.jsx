@@ -31,7 +31,7 @@ class Templates extends React.Component {
 
     renderAddResponse = () => (
         <Dropdown
-            text='Add bot response'
+            text='添加响应'
             icon='plus'
             floating
             labeled
@@ -70,7 +70,7 @@ class Templates extends React.Component {
     );
 
     renderMenu = () => (
-        <PageMenu title='Bot responses' icon='comment alternate'>
+        <PageMenu title='机器人响应' icon='comment alternate'>
             <Menu.Menu position='right'>
                 <Menu.Item>{this.renderAddResponse()}</Menu.Item>
             </Menu.Menu>

@@ -49,7 +49,7 @@ const CrashReportButton = (props) => {
     */
     const generateReport = (text = true) => {
         const [err, info] = error;
-        const firstTwoLinesOfStack = err.stack ? err.stack.split('\n').slice(0, 2).join('\n    in ') : 'stack not available';
+        const firstTwoLinesOfStack = err.stack.split('\n').slice(0, 2).join('\n    in ');
         if (text) {
             return (
                 `Version: ${version}\n`

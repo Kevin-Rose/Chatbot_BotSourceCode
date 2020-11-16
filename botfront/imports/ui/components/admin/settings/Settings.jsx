@@ -50,7 +50,7 @@ class Settings extends React.Component {
     renderSubmitButton = () => (
         <>
             <ErrorsField />
-            <SubmitField value='Save' className='primary' data-cy='save-button' />
+            <SubmitField value='保存' className='primary' data-cy='save-button' />
         </>
     )
 
@@ -77,7 +77,7 @@ class Settings extends React.Component {
 
     renderDefaultNLUPipeline = () => (
         <Tab.Pane>
-            <Message info icon='question circle' content='Default NLU pipeline for new NLU models' />
+            <Message info icon='question circle' content='新NLU模型默认NLU管道' />
             <AceField name='settings.public.defaultNLUConfig' label='' convertYaml />
             {this.renderSubmitButton()}
         </Tab.Pane>
@@ -85,7 +85,7 @@ class Settings extends React.Component {
 
     renderAppearance = () => (
         <Tab.Pane>
-            <Message info icon='question circle' content='Login page background images URLs' />
+            <Message info icon='question circle' content='登录页背景图像URL' />
             <AutoField name='settings.public.backgroundImages' />
             {this.renderSubmitButton()}
         </Tab.Pane>
@@ -96,22 +96,22 @@ class Settings extends React.Component {
         return (
             <>
                 <Segment>
-                    <AutoField name='settings.private.bfApiHost' label='Botfront API host' data-cy='docker-api-host' />
-                    <AutoField name='settings.public.chitChatProjectId' label='Chitchat project Id' info='ID of project containing chitchat NLU training data' />
+                    <AutoField name='settings.private.bfApiHost' label='Botfront API接口' data-cy='docker-api-host' />
+                    <AutoField name='settings.public.chitChatProjectId' label='聊天项目Id' info='ID of project containing chitchat NLU training data' />
                     <AutoField name='settings.public.docUrl' />
                     {this.renderSubmitButton()}
                 </Segment>
                 <Segment>
                     <MigrationControl />
-                    <Header>Rebuild search indices</Header>
-                    <span>Only use this option if you&apos;re having issues with stories search.</span>
+                    <Header>重建索引</Header>
+                    <span>仅当检索有问题时才使用此选项。</span>
                     <br />
                     <br />
                     <Confirm
                         data-cy='rebuild-indices-confirm'
                         open={confirmModalOpen}
-                        header='Rebuild search indices for all projects'
-                        content='This is a safe action that runs in the background, but it may take some time.'
+                        header='仅当检索有问题时才使用此选项。'
+                        content='这是在后台运行的安全操作，但可能需要一些时间。'
                         onCancel={() => this.setState({ confirmModalOpen: false })}
                         onConfirm={() => {
                             Meteor.call('global.rebuildIndexes');
@@ -126,7 +126,7 @@ class Settings extends React.Component {
                         }}
                         data-cy='rebuild-button'
                     >
-                        Rebuild
+                        重构
                     </Button>
                 </Segment>
             </>
@@ -136,10 +136,10 @@ class Settings extends React.Component {
     getSettingsPanes = () => {
         const { projectId } = this.props;
         let panes = [
-            { name: 'default-nlu-pipeline', menuItem: 'Default NLU Pipeline', render: this.renderDefaultNLUPipeline },
-            { name: 'security', menuItem: 'Security', render: this.renderSecurityPane },
-            { name: 'appearance', menuItem: 'Appearance', render: this.renderAppearance },
-            { name: 'misc', menuItem: 'Misc', render: this.renderMisc },
+            { name: 'default-nlu-pipeline', menuItem: '默认NLU管道', render: this.renderDefaultNLUPipeline },
+            { name: 'security', menuItem: '安全', render: this.renderSecurityPane },
+            { name: 'appearance', menuItem: '外观', render: this.renderAppearance },
+            { name: 'misc', menuItem: '其他', render: this.renderMisc },
         ];
 
         if (projectId) {
@@ -149,7 +149,7 @@ class Settings extends React.Component {
                     menuItem: (
                         <Menu.Item
                             icon='backward'
-                            content='Project Settings'
+                            content='项目设置'
                             key='Project Settings'
                             onClick={this.handleReturnToProjectSettings}
                         />

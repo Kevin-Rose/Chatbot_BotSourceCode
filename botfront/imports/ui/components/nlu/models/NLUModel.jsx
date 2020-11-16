@@ -142,7 +142,7 @@ function NLUModel(props) {
                     content={(
                         <div>
                             <Icon name='warning' />
-                            You need at least two distinct intents to train NLU
+                            你至少需要两个不同的意图来训练NLU模型
                         </div>
                     )}
                     info

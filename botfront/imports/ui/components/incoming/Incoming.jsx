@@ -49,9 +49,9 @@ export default function Incoming(props) {
 
     const renderTabs = () => (
         [
-            { value: 'newutterances', text: 'New Utterances' },
-            { value: 'conversations', text: 'Conversations' },
-            { value: 'populate', text: 'Populate' },
+            { value: 'newutterances', text: '话术' },
+            { value: 'conversations', text: '对话' },
+            { value: 'populate', text: '填充' },
         ].map(({ value, text }) => (
             <Menu.Item
                 content={text}

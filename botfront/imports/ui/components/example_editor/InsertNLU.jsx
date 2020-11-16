@@ -33,8 +33,7 @@ function InsertNlu(props) {
                     ({ intent, text, entities }) => ({
                         _id: shortid.generate(),
                         text,
-                        intent: intent?.name ? intent.name : defaultIntent,
-                        confidence: intent?.confidence,
+                        intent: intent && intent.name ? intent.name : defaultIntent,
                         entities,
                         metadata: { draft: !skipDraft },
                     }),
@@ -93,21 +92,10 @@ function InsertNlu(props) {
                     <div className='tester' data-cy='nlu-example-tester'>
                         <Segment>
                             {parsedExample && value.split('\n').length < 2 && (
-                                <>
-                                    <UserUtteranceViewer
-                                        value={parsedExample[0]}
-                                        disableEditing
-                                    />
-                                    {parsedExample[0]?.confidence ? (
-                                        <span className='small grey'>
-                                            (
-                                            {(parsedExample[0].confidence * 100).toFixed(
-                                                2,
-                                            )}
-                                            %)
-                                        </span>
-                                    ) : null}
-                                </>
+                                <UserUtteranceViewer
+                                    value={parsedExample[0]}
+                                    disableEditing
+                                />
                             )}
                             <div className='instructions'>
                                 Press [Enter] to add or edit example

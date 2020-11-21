@@ -48,7 +48,7 @@ class ProjectSidebar extends React.Component {
                     </a> */}
                     <Divider inverted />
                     <Link to='/login'>
-                        <Menu.Item data-cy='退出系统' name='Sign out' icon='sign-out' />
+                        <Menu.Item data-cy='signout' name='退出系统' icon='sign-out' />
                     </Link>
                     <span className='force-bottom'>{packageJson.version}</span>
                 </Menu>

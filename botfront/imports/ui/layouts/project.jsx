@@ -138,10 +138,10 @@ function Project(props) {
         <div style={{ height: '100vh' }}>
             <div className='project-sidebar'>
                 <Header as='h1' className='logo'>
-                    Botfront.
+                    ECAP Bot
                 </Header>
                 <Header as='h1' className='simple-logo'>
-                    B.
+                    E.
                 </Header>
                 {loading && renderPlaceholder(true, false)}
                 {!loading && (

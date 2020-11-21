@@ -22,7 +22,7 @@ class ProjectSidebar extends React.Component {
             <DocumentTitle title={projectName}>
                 <Menu vertical inverted pointing className='project-menu'>
                     <Menu.Item>
-                        <Menu.Header style={{ marginBottom: '20px' }}>Project</Menu.Header>
+                        <Menu.Header style={{ marginBottom: '20px' }}>选择机器人</Menu.Header>
                         <ProjectsDropdown currentProjectId={projectId} onProjectChange={handleChangeProject} />
                     </Menu.Item>
                     <Link to={`/project/${projectId}/dialogue`}>

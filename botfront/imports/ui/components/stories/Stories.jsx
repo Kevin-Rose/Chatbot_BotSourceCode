@@ -232,10 +232,10 @@ function Stories(props) {
             >
                 {modalWrapper(
                     slotsModal,
-                    'Slots',
+                    '槽位',
                     <SlotsEditor slots={slots} projectId={projectId} />,
                 )}
-                {modalWrapper(policiesModal, 'Policies', <PoliciesEditor />, false)}
+                {modalWrapper(policiesModal, '策略', <PoliciesEditor />, false)}
                 <SplitPane
                     split='vertical'
                     minSize={200}

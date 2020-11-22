@@ -207,7 +207,7 @@ function NLUModel(props) {
                     </>
                 )}
                 <br />
-                {activeItem === '训练数据' && (
+                {activeItem === 'Training Data' && (
                     <Tab
                         menu={{ pointing: true, secondary: true }}
                         // activeIndex === 0 is the example tab, we want to refetch data everytime we land on it
@@ -274,10 +274,10 @@ function NLUModel(props) {
                         ]}
                     />
                 )}
-                {activeItem === '评估' && (
+                {activeItem === 'Evaluation' && (
                     <Evaluation validationRender={validationRender} />
                 )}
-                {activeItem === '统计' && (
+                {activeItem === 'Statistics' && (
                     <Statistics
                         synonyms={model.training_data.entity_synonyms.length}
                         gazettes={model.training_data.fuzzy_gazette.length}
@@ -285,7 +285,7 @@ function NLUModel(props) {
                         entities={entities}
                     />
                 )}
-                {activeItem === '设置' && (
+                {activeItem === 'Settings' && (
                     <Tab
                         menu={{ pointing: true, secondary: true }}
                         panes={[

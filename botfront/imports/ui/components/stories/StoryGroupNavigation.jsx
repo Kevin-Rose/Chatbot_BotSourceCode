@@ -93,7 +93,7 @@ class StoryGroupNavigation extends React.Component {
                     )}
                     {this.tooltipWrapper(
                         <Button
-                            content='槽位'
+                            content='Slots'
                             onClick={() => modals.setSlotsModal(true)}
                             data-cy='slots-modal'
                         />,
@@ -101,7 +101,7 @@ class StoryGroupNavigation extends React.Component {
                     )}
                     {this.tooltipWrapper(
                         <Button
-                            content='策略'
+                            content='Policies'
                             onClick={() => modals.setPoliciesModal(true)}
                             data-cy='policies-modal'
                         />,

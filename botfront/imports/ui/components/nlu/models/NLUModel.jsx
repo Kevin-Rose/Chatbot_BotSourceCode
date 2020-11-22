@@ -207,7 +207,7 @@ function NLUModel(props) {
                     </>
                 )}
                 <br />
-                {activeItem === 'Training Data' && (
+                {activeItem === '训练数据' && (
                     <Tab
                         menu={{ pointing: true, secondary: true }}
                         // activeIndex === 0 is the example tab, we want to refetch data everytime we land on it
@@ -215,7 +215,7 @@ function NLUModel(props) {
                         onTabChange={(e, { activeIndex }) => { if (activeIndex === 0) refetch(); }}
                         panes={[
                             {
-                                menuItem: 'Examples',
+                                menuItem: '例子',
                                 render: () => (
                                     <NluTable
                                         ref={tableRef}
@@ -251,19 +251,19 @@ function NLUModel(props) {
                                 ),
                             },
                             {
-                                menuItem: 'Synonyms',
+                                menuItem: '同义词',
                                 render: () => <Synonyms model={model} />,
                             },
                             {
-                                menuItem: 'Gazette',
+                                menuItem: '公报',
                                 render: () => <Gazette model={model} />,
                             },
                             {
-                                menuItem: 'Regex',
+                                menuItem: '正则',
                                 render: () => <RegexFeatures model={model} />,
                             },
                             {
-                                menuItem: 'API',
+                                menuItem: '接口',
                                 render: () => <API model={model} instance={instance} />,
                             },
                             ...(can('nlu-data:w', projectId)
@@ -274,10 +274,10 @@ function NLUModel(props) {
                         ]}
                     />
                 )}
-                {activeItem === 'Evaluation' && (
+                {activeItem === '评估' && (
                     <Evaluation validationRender={validationRender} />
                 )}
-                {activeItem === 'Statistics' && (
+                {activeItem === '统计' && (
                     <Statistics
                         synonyms={model.training_data.entity_synonyms.length}
                         gazettes={model.training_data.fuzzy_gazette.length}
@@ -285,18 +285,18 @@ function NLUModel(props) {
                         entities={entities}
                     />
                 )}
-                {activeItem === 'Settings' && (
+                {activeItem === '设置' && (
                     <Tab
                         menu={{ pointing: true, secondary: true }}
                         panes={[
                             {
-                                menuItem: 'Pipeline',
+                                menuItem: '管道',
                                 render: () => (
                                     <NLUPipeline model={model} projectId={projectId} />
                                 ),
                             },
                             {
-                                menuItem: 'Delete',
+                                menuItem: '删除',
                                 render: () => <DeleteModel />,
                             },
                         ]}

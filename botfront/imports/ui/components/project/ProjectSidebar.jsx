@@ -22,7 +22,7 @@ class ProjectSidebar extends React.Component {
             <DocumentTitle title={projectName}>
                 <Menu vertical inverted pointing className='project-menu'>
                     <Menu.Item>
-                        <Menu.Header style={{ marginBottom: '20px' }}>选择机器人</Menu.Header>
+                        <Menu.Header style={{ marginBottom: '20px' }}>选择</Menu.Header>
                         <ProjectsDropdown currentProjectId={projectId} onProjectChange={handleChangeProject} />
                     </Menu.Item>
                     <Link to={`/project/${projectId}/dialogue`}>
@@ -48,7 +48,7 @@ class ProjectSidebar extends React.Component {
                     </a> */}
                     <Divider inverted />
                     <Link to='/login'>
-                        <Menu.Item data-cy='signout' name='退出系统' icon='sign-out' />
+                        <Menu.Item data-cy='退出系统' name='Sign out' icon='sign-out' />
                     </Link>
                     <span className='force-bottom'>{packageJson.version}</span>
                 </Menu>

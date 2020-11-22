@@ -138,7 +138,7 @@ function Project(props) {
         <div style={{ height: '100vh' }}>
             <div className='project-sidebar'>
                 <Header as='h1' className='logo'>
-                    ECAP Bot
+                    AI Bot
                 </Header>
                 <Header as='h1' className='simple-logo'>
                     E.

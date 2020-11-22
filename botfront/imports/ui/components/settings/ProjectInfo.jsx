@@ -112,7 +112,7 @@ class ProjectInfo extends React.Component {
                 >
                     <InfoField
                         name='name'
-                        label='Name'
+                        label='名称'
                         className='project-name'
                     />
                     <Form.Field>
@@ -137,7 +137,7 @@ class ProjectInfo extends React.Component {
                     </Form.Field>
                     {!!projectLanguages.length && (
                         <SelectField
-                            name='defaultLanguage'
+                            name='默认语言'
                             options={projectLanguages}
                             className='project-default-language'
                             data-cy='default-langauge-selection'

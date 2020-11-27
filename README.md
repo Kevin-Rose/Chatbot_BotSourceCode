@@ -173,7 +173,17 @@ npx cypress run
 # If you want to run a specific test
 npx cypress run --spec "cypress/integration/02_training/training.spec.js"
 ```
+### git tips 
 
+```text
+config your  user name  of git
+$ git config --global user.name "username"
+```
+
+```text
+config your  email of git
+$ git config --global user.email "email"
+```
 ### Commit messages naming convention
 
 To help everyone with understanding the commit history of Botfront, we employ [`commitlint`](https://commitlint.js.org/#/) to enforce the commit styles:
@@ -211,16 +221,6 @@ Botfront is [AGPLv3](https://github.com/botfront/botfront/blob/master/LICENSE) l
 
 <sub>
 Copyright (C) 2019 9300-2038 Quebec Inc. All rights reserved.
-
-
 </sub>
-### git tips 
-```text
-config your  user name  of git
-$ git config --global user.name "username"
-```
-```text
-config your  email of git
-$ git config --global user.email "email"
-```
+
 

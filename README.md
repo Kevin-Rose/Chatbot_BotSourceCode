@@ -211,11 +211,16 @@ Botfront is [AGPLv3](https://github.com/botfront/botfront/blob/master/LICENSE) l
 
 <sub>
 Copyright (C) 2019 9300-2038 Quebec Inc. All rights reserved.
-常用命令：
-配置git 的用户名
-$ git config --global user.name "username"
-配置git 的邮箱
-$ git config --global user.email "email"
-</sub>
 
+
+</sub>
+### git tips 
+```text
+config your  user name  of git
+$ git config --global user.name "username"
+```
+```text
+config your  email of git
+$ git config --global user.email "email"
+```
 

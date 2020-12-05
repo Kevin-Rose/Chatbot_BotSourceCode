@@ -215,7 +215,7 @@ function NLUModel(props) {
                         onTabChange={(e, { activeIndex }) => { if (activeIndex === 0) refetch(); }}
                         panes={[
                             {
-                                menuItem: '例子',
+                                menuItem: 'Examples',
                                 render: () => (
                                     <NluTable
                                         ref={tableRef}
@@ -231,7 +231,7 @@ function NLUModel(props) {
                                                 language: workingLanguage,
                                             },
                                         })}
-                                        deleteExamples={ids => deleteExamples({ variables: { ids } })}
+                                        deleteExamples={ids => deleteExamples({ variables: { ids, projectId } })}
                                         switchCanonical={example => switchCanonical({
                                             variables: {
                                                 projectId,
@@ -251,19 +251,19 @@ function NLUModel(props) {
                                 ),
                             },
                             {
-                                menuItem: '同义词',
+                                menuItem: 'Synonyms',
                                 render: () => <Synonyms model={model} />,
                             },
                             {
-                                menuItem: '公报',
+                                menuItem: 'Gazette',
                                 render: () => <Gazette model={model} />,
                             },
                             {
-                                menuItem: '正则',
+                                menuItem: 'Regex',
                                 render: () => <RegexFeatures model={model} />,
                             },
                             {
-                                menuItem: '接口',
+                                menuItem: 'API',
                                 render: () => <API model={model} instance={instance} />,
                             },
                             ...(can('nlu-data:w', projectId)
@@ -290,13 +290,13 @@ function NLUModel(props) {
                         menu={{ pointing: true, secondary: true }}
                         panes={[
                             {
-                                menuItem: '管道',
+                                menuItem: 'Pipeline',
                                 render: () => (
                                     <NLUPipeline model={model} projectId={projectId} />
                                 ),
                             },
                             {
-                                menuItem: '删除',
+                                menuItem: 'Delete',
                                 render: () => <DeleteModel />,
                             },
                         ]}

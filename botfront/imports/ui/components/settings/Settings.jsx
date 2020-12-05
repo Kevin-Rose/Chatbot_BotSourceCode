@@ -41,7 +41,7 @@ class Settings extends React.Component {
             },
             {
                 name: 'credentials',
-                menuItem: <Menu.Item icon='key' content='资格证书' key='Credentials' />,
+                menuItem: <Menu.Item icon='key' content='资格' key='Credentials' />,
                 render: () => <Tab.Pane><Credentials /></Tab.Pane>,
             },
             {

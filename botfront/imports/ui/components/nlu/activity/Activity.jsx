@@ -376,7 +376,7 @@ function Activity(props) {
                     disabled={!validated.length}
                 >
                     <Icon name='lab' />
-                    意图评估
+                    Run evaluation
                 </Button>
                 <Button
                     color='green'
@@ -392,21 +392,21 @@ function Activity(props) {
                     disabled={!validated.length}
                 >
                     <Icon name='add square' />
-                    添加训练数据
+                    Add to training data
                 </Button>
             </Button.Group>
             <PrefixDropdown
                 selection={sortType}
                 updateSelection={option => setSortType(option.value)}
                 options={[
-                    { value: 'Newest', text: '最新' },
-                    { value: 'Oldest', text: '最老' },
-                    { value: 'Validated first', text: '准确优先' },
-                    { value: 'Validated last', text: '准确逆序' },
-                    { value: '% ascending', text: '% 上升' },
-                    { value: '% decending', text: '% 下降' },
+                    { value: 'Newest', text: 'Newest' },
+                    { value: 'Oldest', text: 'Oldest' },
+                    { value: 'Validated first', text: 'Validated first' },
+                    { value: 'Validated last', text: 'Validated last' },
+                    { value: '% ascending', text: '% ascending' },
+                    { value: '% decending', text: '% decending' },
                 ]}
-                prefix='排序'
+                prefix='Sort by'
             />
         </div>
     );
@@ -418,7 +418,6 @@ function Activity(props) {
                 <>
                     <DataTable
                         ref={tableRef}
-                        bufferSize={20}
                         columns={columns}
                         data={data}
                         hasNextPage={hasNextPage}

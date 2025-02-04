@@ -8,6 +8,11 @@ ENV NODE_ENV $ARG_NODE_ENV
 ENV DISABLE_CLIENT_STATS 1
 # Increase Node memory for build
 ENV TOOL_NODE_FLAGS --max-old-space-size=4096
+# Allow Meteor to run as superuser
+ENV METEOR_ALLOW_SUPERUSER=true
+
+# Change ownership of .meteor/local to the appropriate user
+# RUN chown -R node:node /opt/bundle/bundle/.meteor/local
 
 RUN bash $SCRIPTS_FOLDER/build-app-npm-dependencies.sh
 
@@ -16,7 +21,6 @@ COPY ./botfront $APP_SOURCE_FOLDER/
 
 RUN bash $SCRIPTS_FOLDER/build-meteor-bundle.sh
 
-
 # Meteor 1.10.2 require node 12
 FROM node:12-alpine
 
@@ -24,10 +28,15 @@ ENV APP_BUNDLE_FOLDER /opt/bundle
 ENV SCRIPTS_FOLDER /docker
 
 # Install OS build dependencies, which we remove later after we’ve compiled native Node extensions
-RUN apk --no-cache --virtual .node-gyp-compilation-dependencies add \
+# 设置软件仓库镜像源为阿里云
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+# --no-cache
+RUN apk  --virtual .node-gyp-compilation-dependencies add \
+	gcc\
+		musl-dev\
 		g++ \
 		make \
-		python \
+		python3 \
 	# And runtime dependencies, which we keep
 	&& apk --no-cache add \
 		bash \

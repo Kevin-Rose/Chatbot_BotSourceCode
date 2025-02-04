@@ -224,3 +224,10 @@ Copyright (C) 2019 9300-2038 Quebec Inc. All rights reserved.
 </sub>
 
 
+docker build -t ecap-aibot-custom:v0.27.4.2  -f Dockerfile_alt . 
+
+
+docker build -t my-image:latest -f Dockerfile_alt .
+
+
+

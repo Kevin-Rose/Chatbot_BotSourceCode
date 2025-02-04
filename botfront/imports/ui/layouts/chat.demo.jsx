@@ -108,7 +108,7 @@ const ChatDemo = (props) => {
             </ResponsiveAlternants>
         </div>
     );
-
+    // Try out your chatbot
     const render = () => (
         <>
             {renderTopMenu()}
@@ -118,7 +118,7 @@ const ChatDemo = (props) => {
                     initPayload={widgetProps.initPayload}
                     socketUrl={widgetProps.socketUrl}
                     socketPath={widgetProps.socketPath}
-                    inputTextFieldHint='Try out your chatbot...'
+                    inputTextFieldHint='试用您的聊天机器人...'
                     hideWhenNotConnected={false}
                     customData={{ language }}
                     embedded
